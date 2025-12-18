@@ -1,0 +1,202 @@
+/* ===============================
+   GLOBAL APP BACKGROUND
+================================ */
+.stApp {
+    background: linear-gradient(
+        135deg,
+        #0f172a 0%,
+        #111827 50%,
+        #020617 100%
+    );
+    min-height: 100vh;
+    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    padding: 20px;
+}
+
+/* ===============================
+   CARD CONTAINER
+================================ */
+.card {
+    position: relative;
+    background: linear-gradient(
+        135deg,
+        #111827 0%,
+        #0f172a 100%
+    );
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 28px;
+    color: #e5e7eb;
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(6px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Gradient Border */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        #38bdf8,
+        #34d399,
+        #6366f1
+    );
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 55px rgba(0, 0, 0, 0.85);
+}
+
+/* ===============================
+   HEADINGS & TEXT
+================================ */
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: -0.6px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+p {
+    font-size: 16px;
+    color: #cbd5e1;
+}
+
+/* ===============================
+   METRIC CARDS
+================================ */
+div[data-testid="metric-container"] {
+    background: linear-gradient(
+        135deg,
+        #020617,
+        #0f172a
+    );
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.7);
+    color: #f8fafc;
+    transition: transform 0.25s ease;
+}
+
+div[data-testid="metric-container"]:hover {
+    transform: scale(1.04);
+}
+
+/* Metric labels */
+div[data-testid="metric-container"] label {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+/* Metric values */
+div[data-testid="metric-container"] div {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* ===============================
+   DATAFRAME
+================================ */
+.stDataFrame {
+    border-radius: 14px;
+    overflow: hidden;
+    background-color: #020617;
+}
+
+/* ===============================
+   PREDICTION BOX
+================================ */
+.prediction-box {
+    background: linear-gradient(
+        135deg,
+        #22c55e,
+        #15803d
+    );
+    padding: 24px;
+    border-radius: 18px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ecfdf5;
+    margin-top: 18px;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.75);
+    letter-spacing: 0.4px;
+}
+
+/* ===============================
+   INPUTS
+================================ */
+.stSlider,
+.stSelectbox {
+    padding-top: 8px;
+    color: #e5e7eb;
+}
+
+/* Slider Value */
+div[data-testid="stThumbValue"] {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+/* ===============================
+   PLOTS
+================================ */
+canvas,
+svg {
+    border-radius: 14px;
+    background-color: #020617;
+}
+
+/* ===============================
+   SCROLLBAR
+================================ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        #38bdf8,
+        #22c55e
+    );
+    border-radius: 10px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .card {
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+}
